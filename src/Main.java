@@ -74,8 +74,7 @@ public class Main {
                             }
 
                         }
-                        case 3 -> {
-                        }
+                        case 3 ->hocVien = Management.delete(hocVien);
                         case 4 -> {
                             for (Student s : hocVien) {
                                 System.out.println(s);

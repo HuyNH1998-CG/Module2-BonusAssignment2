@@ -50,4 +50,25 @@ public class Management {
         newStudents[newStudents.length - 1] = student;
         return newStudents;
     }
+
+    public static Student[] delete(Student[] arr) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Input Student ID to delete");
+        Student[] newStudents = new Student[arr.length - 1];
+        int id = input.nextInt();
+        int start = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (id == arr[i].getId()) {
+                start = i;
+            }
+        }
+        for (int i = start; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = null;
+        for (int i = 0; i < newStudents.length; i++) {
+            newStudents[i] = arr[i];
+        }
+        return newStudents;
+    }
 }
